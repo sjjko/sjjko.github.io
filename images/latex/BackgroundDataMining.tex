@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{listings}             % Include the listings-package
+\begin{document}
+\lstset{language=Java}          % Set your language (you can change the language for each code-block optionally)
+
+\begin{lstlisting}[frame=none]  % Start your code-block
+        Instances datenZurAnalyse=cTS_Delta.getInstancesFromSQL
+        ("SELECT * FROM NHLDATA_DELTA;");
+        Instances datenZurAnalyseGefiltert=sD.FilterArguments
+        ("1,2,3,4,5,6,15","datenZurAnalyse",datenZurAnalyse);
+        clusteringCla skMCI = 
+        new clusteringCla(datenZurAnalyseGefiltert);
+        skMCI.createDatasets(0.5);
+        skMCI.createCluster(2);
+        skMCI.trainCluster();
+        skMCI.evalCluster();
+        Instances cluster0Instances =
+         skMCI.returnClusterInstanceWithIndex(0);
+        Instances cluster1Instances =
+         skMCI.returnClusterInstanceWithIndex(1);
+        Plot2D offScreenPlot = new Plot2D();
+        offScreenPlot.setSize(500,500);
+\end{lstlisting}
+
+
+\end{document}

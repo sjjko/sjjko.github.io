@@ -1,0 +1,515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to pyStatKs’s documentation! &mdash; pyStatKs 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pyStatKs 0.1 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="#">pyStatKs 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-pystatks-s-documentation">
+<h1>Welcome to pyStatKs&#8217;s documentation!<a class="headerlink" href="#welcome-to-pystatks-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>pyStatKs is a statistics package to process NHL© game data.
+It uses the data scraper <a class="reference external" href="https://github.com/robhowley/nhlscrapi">nhlscrapi</a>
+to fetch the data and does some analysis using packages as <a class="reference external" href="http://pybrain.org/">pyBrain</a>
+for neural networks and <a class="reference external" href="http://www.scipy.org/">scipy</a> and <a class="reference external" href="http://www.numpy.org/">numpy</a>
+for statistics.</p>
+<div class="section" id="pystatks-in-use">
+<h2>pyStatKs in use:<a class="headerlink" href="#pystatks-in-use" title="Permalink to this headline">¶</a></h2>
+<p>I used the modules in a <a class="reference external" href="https://github.com/sjjko/nhlAnalysis/blob/master/ipython/dataMiningNHL.ipynb">dataMining ipython sheet</a>
+and a Neural Network <a class="reference external" href="https://github.com/sjjko/nhlAnalysis/blob/master/ipython/neuralNHL.ipynb">ipython sheet</a>. Modules are
+furthermore used in my <a class="reference external" href="https://github.com/sjjko/nhlAnalysis/tree/master/R">R Jupyter notebooks</a>.</p>
+</div>
+<div class="section" id="structure-of-pystatks">
+<h2>Structure of pyStatKs<a class="headerlink" href="#structure-of-pystatks" title="Permalink to this headline">¶</a></h2>
+<p><strong>The pyStatKs module consists of two classes for data harvesting:</strong></p>
+<ul class="simple">
+<li><em class="xref std std-ref">MinerC</em></li>
+</ul>
+<p>the class fetching data using nhlscrapi</p>
+<ul class="simple">
+<li><em class="xref std std-ref">setupNhlDataC</em></li>
+</ul>
+<p>class for formatting the data read</p>
+<p><strong>and classes for data processing and neural network analysis:</strong></p>
+<ul class="simple">
+<li><em class="xref std std-ref">AnalysisC</em></li>
+</ul>
+<p>as the base class for all the classes below.</p>
+<ul class="simple">
+<li><em class="xref std std-ref">NeuralNetworkAnalysisC</em></li>
+</ul>
+<p>contains routines for the setup, training and analysis of neural networks</p>
+<ul class="simple">
+<li><em class="xref std std-ref">WaveletAnalysisC</em></li>
+</ul>
+<p>contains routines for performing wavelet analysis on the dataset</p>
+<ul class="simple">
+<li><em class="xref std std-ref">BivariateAnalysisC</em></li>
+</ul>
+<p>doing some bivariate data analysis</p>
+<ul class="simple">
+<li><em class="xref std std-ref">MultivariateStatisticsC</em></li>
+</ul>
+<p>doing some multivariate statistics</p>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+</div>
+<div class="section" id="module-pyStatKs">
+<span id="class-documentation"></span><h2>Class-documentation<a class="headerlink" href="#module-pyStatKs" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyStatKs.AnalysisC">
+<em class="property">class </em><tt class="descclassname">pyStatKs.</tt><tt class="descname">AnalysisC</tt><big>(</big><em>prepareDataC</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#AnalysisC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.AnalysisC" title="Permalink to this definition">¶</a></dt>
+<dd><p>main analysis class - fetches data and contains</p>
+<dl class="method">
+<dt id="pyStatKs.AnalysisC.Dataselector">
+<tt class="descname">Dataselector</tt><big>(</big><em>dataID</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#AnalysisC.Dataselector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.AnalysisC.Dataselector" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the dataset among the bunch of delta, summed and generated datasets</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.AnalysisC.GetDataSetType">
+<tt class="descname">GetDataSetType</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#AnalysisC.GetDataSetType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.AnalysisC.GetDataSetType" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the dataset type: summed, delta or generated data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.AnalysisC.GetEN">
+<tt class="descname">GetEN</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#AnalysisC.GetEN"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.AnalysisC.GetEN" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the enumeration object containing the data categories of imported game data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.AnalysisC.GetENList">
+<tt class="descname">GetENList</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#AnalysisC.GetENList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.AnalysisC.GetENList" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the enumeration object containing the data categories of imported game data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.AnalysisC.GetSeasonList">
+<tt class="descname">GetSeasonList</tt><big>(</big><em>dataID</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#AnalysisC.GetSeasonList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.AnalysisC.GetSeasonList" title="Permalink to this definition">¶</a></dt>
+<dd><p>return list of seasons for imported game data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.AnalysisC.GetTeamList">
+<tt class="descname">GetTeamList</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#AnalysisC.GetTeamList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.AnalysisC.GetTeamList" title="Permalink to this definition">¶</a></dt>
+<dd><p>get list of teams for imported game data</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyStatKs.BivariateAnalysisC">
+<em class="property">class </em><tt class="descclassname">pyStatKs.</tt><tt class="descname">BivariateAnalysisC</tt><big>(</big><em>AnalysisC</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#BivariateAnalysisC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.BivariateAnalysisC" title="Permalink to this definition">¶</a></dt>
+<dd><p>not really derived from AnalysisC, just lends some methods and shared data for all methods</p>
+<dl class="method">
+<dt id="pyStatKs.BivariateAnalysisC.ComputeTimeWinStatistics">
+<tt class="descname">ComputeTimeWinStatistics</tt><big>(</big><em>dataTypeID</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#BivariateAnalysisC.ComputeTimeWinStatistics"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.BivariateAnalysisC.ComputeTimeWinStatistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>compute the histograms of data in a season for two datasets - bivariate</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.BivariateAnalysisC.PlotAllFromDict2D">
+<tt class="descname">PlotAllFromDict2D</tt><big>(</big><em>dictionary</em>, <em>titleSupplement</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#BivariateAnalysisC.PlotAllFromDict2D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.BivariateAnalysisC.PlotAllFromDict2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>import a 2d dictionary and plot all data it contains</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="pyStatKs.EnumF">
+<tt class="descclassname">pyStatKs.</tt><tt class="descname">EnumF</tt><em class="property"> = &lt;bound method small_util_routines.EnumF of &lt;utils.small_util_routines object at 0x2b24de22bf90&gt;&gt;</em><a class="headerlink" href="#pyStatKs.EnumF" title="Permalink to this definition">¶</a></dt>
+<dd><p>this class implements harvesting and
+processing routines for NHL game data</p>
+<p>for fetching NHL data the nhlscrapi class
+has been used</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyStatKs.MinerC">
+<em class="property">class </em><tt class="descclassname">pyStatKs.</tt><tt class="descname">MinerC</tt><big>(</big><em>seasonList</em>, <em>withPlayoffGames</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MinerC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MinerC" title="Permalink to this definition">¶</a></dt>
+<dd><p>class for mining NHL game data</p>
+<dl class="method">
+<dt id="pyStatKs.MinerC.assembleFileName">
+<tt class="descname">assembleFileName</tt><big>(</big><em>thisSeason</em>, <em>plusMinus</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MinerC.assembleFileName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MinerC.assembleFileName" title="Permalink to this definition">¶</a></dt>
+<dd><p>assemble name of output file
+input:
+season: 4 digit number specifying season e.g. 2010</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.MinerC.getGameDate">
+<tt class="descname">getGameDate</tt><big>(</big><em>gameDate</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MinerC.getGameDate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MinerC.getGameDate" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the date of the game in the python date format</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.MinerC.getReferenceDate">
+<tt class="descname">getReferenceDate</tt><big>(</big><em>season</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MinerC.getReferenceDate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MinerC.getReferenceDate" title="Permalink to this definition">¶</a></dt>
+<dd><p>reference date to which date of every game is calculated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.MinerC.mine_data">
+<tt class="descname">mine_data</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MinerC.mine_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MinerC.mine_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>main mining routine in mining class - fetches data using nhlscrapi</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.MinerC.write_data">
+<tt class="descname">write_data</tt><big>(</big><em>doPrint</em>, <em>plusMinus</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MinerC.write_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MinerC.write_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>write data in ascii format into output file
+:rtype : object
+input:
+doPrint: 0 or 1, if dataset should be dumped to file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.MinerC.write_header">
+<tt class="descname">write_header</tt><big>(</big><em>plusMinus</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MinerC.write_header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MinerC.write_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>write output file header</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyStatKs.MultivariateStatisticsC">
+<em class="property">class </em><tt class="descclassname">pyStatKs.</tt><tt class="descname">MultivariateStatisticsC</tt><big>(</big><em>AnalysisC</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MultivariateStatisticsC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MultivariateStatisticsC" title="Permalink to this definition">¶</a></dt>
+<dd><p>not really derived from AnalysisC, just lends some methods and shared data for all methods</p>
+<dl class="method">
+<dt id="pyStatKs.MultivariateStatisticsC.GetMatchupDataBetweenTeamsAllSeasons">
+<tt class="descname">GetMatchupDataBetweenTeamsAllSeasons</tt><big>(</big><em>team1</em>, <em>team2</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MultivariateStatisticsC.GetMatchupDataBetweenTeamsAllSeasons"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MultivariateStatisticsC.GetMatchupDataBetweenTeamsAllSeasons" title="Permalink to this definition">¶</a></dt>
+<dd><p>compile the data of matchups between two teams over multiple seasons
+and store in self._currentlyAnalyzedDataDict</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.MultivariateStatisticsC.KernelMapping">
+<tt class="descname">KernelMapping</tt><big>(</big><em>kernelName</em>, <em>team</em>, <em>gesamtDatenTyp</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MultivariateStatisticsC.KernelMapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MultivariateStatisticsC.KernelMapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>do a kernel mapping from KxN space to NxN space
+by applying various mapping functions to the input data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.MultivariateStatisticsC.LinearKernelMapping">
+<tt class="descname">LinearKernelMapping</tt><big>(</big><em>team</em>, <em>dataToAnalyze</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MultivariateStatisticsC.LinearKernelMapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MultivariateStatisticsC.LinearKernelMapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>the linear kernel mapping multiplies each dataset(row, with N features) with the transposed of the next set
+is zero if datasets are orthogonal (in the space spanned by the unit vectors of input space)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.MultivariateStatisticsC.PlotDistanceMatrix2D">
+<tt class="descname">PlotDistanceMatrix2D</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MultivariateStatisticsC.PlotDistanceMatrix2D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MultivariateStatisticsC.PlotDistanceMatrix2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot the mapped data against the date</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.MultivariateStatisticsC.PlotDistanceMatrix3D">
+<tt class="descname">PlotDistanceMatrix3D</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MultivariateStatisticsC.PlotDistanceMatrix3D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MultivariateStatisticsC.PlotDistanceMatrix3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot the mapped data against the date</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.MultivariateStatisticsC.PrepareData">
+<tt class="descname">PrepareData</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MultivariateStatisticsC.PrepareData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MultivariateStatisticsC.PrepareData" title="Permalink to this definition">¶</a></dt>
+<dd><p>we read the 9 categories for use in multivariate analysis</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.MultivariateStatisticsC.RBFKernelMapping">
+<tt class="descname">RBFKernelMapping</tt><big>(</big><em>team</em>, <em>dataToAnalyze</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#MultivariateStatisticsC.RBFKernelMapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.MultivariateStatisticsC.RBFKernelMapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>the linear kernel mapping multiplies each dataset(row, with N features) with the transposed of the next set
+is zero if datasets are orthogonal (in the space spanned by the unit vectors of input space)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyStatKs.NeuralNetworkAnalysisC">
+<em class="property">class </em><tt class="descclassname">pyStatKs.</tt><tt class="descname">NeuralNetworkAnalysisC</tt><big>(</big><em>AnalysisC</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#NeuralNetworkAnalysisC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.NeuralNetworkAnalysisC" title="Permalink to this definition">¶</a></dt>
+<dd><p>not really derived from AnalysisC, just lends some methods and shared data for all methods</p>
+<dl class="method">
+<dt id="pyStatKs.NeuralNetworkAnalysisC.AssessLastNGamesHelper">
+<tt class="descname">AssessLastNGamesHelper</tt><big>(</big><em>currentDate</em>, <em>currentSeason</em>, <em>Team</em>, <em>fullData</em>, <em>NLastGames</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#NeuralNetworkAnalysisC.AssessLastNGamesHelper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.NeuralNetworkAnalysisC.AssessLastNGamesHelper" title="Permalink to this definition">¶</a></dt>
+<dd><p>assess the performance of the team for the last N games
+starting from
+input   id
+input   season for team
+input   Team
+input   full dataset over all seasons
+input   NLastGames: number of games to sum over (shifted sum)
+output  number of team wins in last N performances</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.NeuralNetworkAnalysisC.GetWinChanceHelper">
+<tt class="descname">GetWinChanceHelper</tt><big>(</big><em>homeGame</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#NeuralNetworkAnalysisC.GetWinChanceHelper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.NeuralNetworkAnalysisC.GetWinChanceHelper" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>input:</dt>
+<dd>list of 0 and 1, 1 for win, 0 for loss</dd>
+<dt>output:</dt>
+<dd>list with sums up to the list index</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.NeuralNetworkAnalysisC.PrepareNNInputData">
+<tt class="descname">PrepareNNInputData</tt><big>(</big><em>splitFactorTrainingTest</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#NeuralNetworkAnalysisC.PrepareNNInputData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.NeuralNetworkAnalysisC.PrepareNNInputData" title="Permalink to this definition">¶</a></dt>
+<dd><p>split input data into training and testing set
+:param splitFactorTrainingTest: ratio of splitting into training to testing dataset
+:return nothing, writes neural network input data fields internally into array</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.NeuralNetworkAnalysisC.RunNeuralNetwork">
+<tt class="descname">RunNeuralNetwork</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#NeuralNetworkAnalysisC.RunNeuralNetwork"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.NeuralNetworkAnalysisC.RunNeuralNetwork" title="Permalink to this definition">¶</a></dt>
+<dd><p>setup the neural network
+input:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>inputData:</dt>
+<dd>pre-formatted data, with d-columns - we initialize as many input neurons as data columns</dd>
+<dt>NhiddenLayers:</dt>
+<dd>number of hidden (in between) layers of the neural network</dd>
+<dt>NoHiddenNeuronsInNoInputLayers:</dt>
+<dd>number of neurons in hidden layer as multiple of input neurons</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>output:</dt>
+<dd><dl class="first last docutils">
+<dt>estimationOut</dt>
+<dd>list of estimated outputs</dd>
+<dt>actualOut</dt>
+<dd>list of actual outputs as given in input</dd>
+<dt>errorPercent</dt>
+<dd>error of estimation in %</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.NeuralNetworkAnalysisC.SetCurrentlyAnalyzedDataSetDict">
+<tt class="descname">SetCurrentlyAnalyzedDataSetDict</tt><big>(</big><em>typeString</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#NeuralNetworkAnalysisC.SetCurrentlyAnalyzedDataSetDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.NeuralNetworkAnalysisC.SetCurrentlyAnalyzedDataSetDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>as specified in input, read the input dataset from analysis class</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.NeuralNetworkAnalysisC.SetupNNDataMatchup">
+<tt class="descname">SetupNNDataMatchup</tt><big>(</big><em>Team1</em>, <em>Team2</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#NeuralNetworkAnalysisC.SetupNNDataMatchup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.NeuralNetworkAnalysisC.SetupNNDataMatchup" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>input:</dt>
+<dd><dl class="first docutils">
+<dt>:param gesamtDatenDict</dt>
+<dd>whole dataset for all seasons and stat categories</dd>
+<dt>:param Team1Name</dt>
+<dd>name of team1 of matchup</dd>
+</dl>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">param Team2Name:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">name of team1 of matchup</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>output: returns interna fields for</dt>
+<dd><dl class="first last docutils">
+<dt>_inputData</dt>
+<dd><p class="first">multivariate data with rows containing data for each matchup
+and columns containing categorical data as follows:</p>
+<blockquote class="last">
+<div>#1 first team home matchup score, until current matchup - add only information of one match at time
+#2 second team home matchup score (same as first team away matchup score), until current matchup
+#3 first teams performance over last N games
+#4 second teams performance over last N games
+#5 days off the first team had before matchup
+#6 days off the second team had before matchup</div></blockquote>
+</dd>
+<dt>_outData</dt>
+<dd>the target data, in this case a one dimensional array
+containing integer 1 if team1 won, else 0</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.NeuralNetworkAnalysisC.SetupNeuralNetwork">
+<tt class="descname">SetupNeuralNetwork</tt><big>(</big><em>NhiddenLayers</em>, <em>NoHiddenNeuronsInNoInputLayers</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#NeuralNetworkAnalysisC.SetupNeuralNetwork"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.NeuralNetworkAnalysisC.SetupNeuralNetwork" title="Permalink to this definition">¶</a></dt>
+<dd><p>setup the feed forward neural network
+:param NhiddenLayers: number of hidden layers in the neural network
+:param NoHiddenNeuronsInNoInputLayers:  number of neurons in a hidden layer
+:return: nothing, sets an internal field directing to the neural network</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyStatKs.WaveletAnalysisC">
+<em class="property">class </em><tt class="descclassname">pyStatKs.</tt><tt class="descname">WaveletAnalysisC</tt><big>(</big><em>AnalysisC</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#WaveletAnalysisC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.WaveletAnalysisC" title="Permalink to this definition">¶</a></dt>
+<dd><p>not really derived from AnalysisC, just lends some methods and shared data for all methods</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyStatKs.prepareDataC">
+<em class="property">class </em><tt class="descclassname">pyStatKs.</tt><tt class="descname">prepareDataC</tt><big>(</big><em>seasonList</em>, <em>readUsingTK=True</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#prepareDataC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.prepareDataC" title="Permalink to this definition">¶</a></dt>
+<dd><p>prepare data for use in statistical analysis</p>
+<dl class="method">
+<dt id="pyStatKs.prepareDataC.GenerateGenericDataCorrelatedHelper">
+<tt class="descname">GenerateGenericDataCorrelatedHelper</tt><big>(</big><em>unitCovDictInput</em>, <em>uncorrelated</em>, <em>uniformDistribution=False</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#prepareDataC.GenerateGenericDataCorrelatedHelper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.prepareDataC.GenerateGenericDataCorrelatedHelper" title="Permalink to this definition">¶</a></dt>
+<dd><p>to generate correlated output data according to a multivariate normal distribution
+for testing reasons
+input:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>fullSeasonData a realistic NHL dataset - keep all games</dt>
+<dd>just alter the results to correlate</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.prepareDataC.GenerateGenericDistributedDataHelper">
+<tt class="descname">GenerateGenericDistributedDataHelper</tt><big>(</big><em>originalInputData</em>, <em>unitCovDictInput</em>, <em>uncorrelated</em>, <em>uniformDistribution=False</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#prepareDataC.GenerateGenericDistributedDataHelper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.prepareDataC.GenerateGenericDistributedDataHelper" title="Permalink to this definition">¶</a></dt>
+<dd><p>to generate correlated output data according to a multivariate normal distribution
+for testing reasons
+input:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>fullSeasonData a realistic NHL dataset - keep all games</dt>
+<dd>just alter the results to correlate</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.prepareDataC.assembleGeneratedFileName">
+<tt class="descname">assembleGeneratedFileName</tt><big>(</big><em>thisSeason</em>, <em>actualGameType</em>, <em>plusMinus</em>, <em>uncorrelated</em>, <em>uniformDistribution</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#prepareDataC.assembleGeneratedFileName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.prepareDataC.assembleGeneratedFileName" title="Permalink to this definition">¶</a></dt>
+<dd><p>assemble name of output file
+input:
+season: 4 digit number specifying season e.g. 2010</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyStatKs.prepareDataC.readInput">
+<tt class="descname">readInput</tt><big>(</big><em>file_path</em>, <em>readUsingTK=False</em><big>)</big><a class="reference internal" href="_modules/pyStatKs.html#prepareDataC.readInput"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStatKs.prepareDataC.readInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>read raw data from file and put it in dictionary</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+<p>extlinks = {&#8216;nhlscrapi&#8217;: (&#8216; &#8216;)}</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to pyStatKs&#8217;s documentation!</a><ul>
+<li><a class="reference internal" href="#pystatks-in-use">pyStatKs in use:</a></li>
+<li><a class="reference internal" href="#structure-of-pystatks">Structure of pyStatKs</a></li>
+<li><a class="reference internal" href="#module-pyStatKs">Class-documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/pyStatKs.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="#">pyStatKs 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2016, Stefan Konzett-Stoffl.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
