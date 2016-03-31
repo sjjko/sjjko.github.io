@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- <title>publications</title> -->
+  <!-- <title>nyc Taxi</title> -->
   <meta name="description" content="">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/pub/">
+  <link rel="canonical" href="http://yourdomain.com/nycTaxi/">
   <link rel="alternate" type="application/rss+xml" title="Stefan Konzett-Stoffl" href="http://yourdomain.com/feed.xml">
 </head>
 
@@ -213,18 +213,39 @@
   </script>
 
   <header class="post-header">
-    <!-- <h3 class="post-title">publications</h3> -->
+    <!-- <h3 class="post-title">nyc Taxi</h3> -->
   </header>
 
   <div class="post-content">
-    <ul>
-<li>Correlation length scaling laws in drift-Alfvén edge turbulence computations, S. Konzett, D. Reiser, A. Kendl, Plasma physics and controlled Fusion, 2012</li>
-<li>Turbulence in the edge of magnetized plasmas: emergent structures and transport, A. Kendl, F. Gennrich, J. Peer, S. Konzett, T. Ribeiro, 2009, inis.iaea.org</li>
-<li>Simulations on the influence of rational magnetic surfaces on turbulence in the edge region of a tokamak fusion experiment, S. Konzett, A Kendl, D. Reiser, 2009, inis.iaea.org</li>
-<li>Magnetic geometry and flow shear effects on tokamak edge turbulence simulations, S. Konzett, D. Reiser, A. Kendl, ocs.ciemat.es</li>
-<li>Investigation of Fluctuations in the SOL of ASDEX Upgrade by Langmuir Probes, P. Balan, F. Mehlmann, S. Konzett, A. Kendl, C. Ionita, 2007, inis.iaea.org</li>
-<li>Experimental and numerical characterisation of fluctuations in the SOL of ASDEX upgrade during L-mode and ELMy H-mode, R. Schrittwieser, S. Konzett, F. Mehlmann, P. Balan, C. Ionita, A. Kendl, Naulin, V.; Juul Rasmussen, Jens; Nielsen, A.H.; Garcia, Odd Erik; Müller, H.W.; Herrmann, A.; V. Rohde, M. Maraschek, 34th European Physical Society Conference on Plasma Physics and Controlled Fusion, Warsaw, Poland, 2007</li>
-</ul>
+    <h2>Analysis of New York City Cab data</h2>
+
+<hr>
+
+<p>&nbsp;</p>
+
+<p>In this excursion I examined the New York City Cab dataset, which can be found
+at the NYC <a href="https://nycopendata.socrata.com/">opendata homepage</a>. The database table stores
+attributes such as drop off and pickup times, fare amounts, tips given,
+the type of payment used,....</p>
+
+<p>My approach was twofold. First I imported the database-data using a <a href="https://github.com/sjjko/nycData">Java script</a>,
+and the <a href="https://github.com/socrata/soda-java">Socrata Java API</a>.</p>
+
+<p>The final data analysis has been done using R scripts you can find <a href="https://github.com/sjjko/nycData/tree/master/R">here</a>.</p>
+
+<h3>One glimpse at the analysis</h3>
+
+<p>I used the GPS data of the taxi pickup location and used the absolute value as norm
+to assign the taxi rides to the nearest town area. In a next step I filtered the data
+for the region and computed the mean value of trip distance by trip time to arrive at a
+simple chart giving the average speed of a cab in the region of interest:</p>
+
+<p><img src="/images/dataMining/AverageSpeedTaxi.png" align="center"/></p>
+
+<p>Unsurprisingly the cabs are fastest in the Bronx and Washington Heights, far from
+the busy city center and slowest in Chelsea, where roads are narrow and traffic is high.</p>
+
+<p>As this is an ongoing effort there is much more to be following here in the next few days.</p>
 
   </div>
 

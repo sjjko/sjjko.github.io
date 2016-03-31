@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- <title>publications</title> -->
+  <!-- <title>nyc data</title> -->
   <meta name="description" content="">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/pub/">
+  <link rel="canonical" href="http://yourdomain.com/nycData/">
   <link rel="alternate" type="application/rss+xml" title="Stefan Konzett-Stoffl" href="http://yourdomain.com/feed.xml">
 </head>
 
@@ -213,18 +213,43 @@
   </script>
 
   <header class="post-header">
-    <!-- <h3 class="post-title">publications</h3> -->
+    <!-- <h3 class="post-title">nyc data</h3> -->
   </header>
 
   <div class="post-content">
-    <ul>
-<li>Correlation length scaling laws in drift-Alfvén edge turbulence computations, S. Konzett, D. Reiser, A. Kendl, Plasma physics and controlled Fusion, 2012</li>
-<li>Turbulence in the edge of magnetized plasmas: emergent structures and transport, A. Kendl, F. Gennrich, J. Peer, S. Konzett, T. Ribeiro, 2009, inis.iaea.org</li>
-<li>Simulations on the influence of rational magnetic surfaces on turbulence in the edge region of a tokamak fusion experiment, S. Konzett, A Kendl, D. Reiser, 2009, inis.iaea.org</li>
-<li>Magnetic geometry and flow shear effects on tokamak edge turbulence simulations, S. Konzett, D. Reiser, A. Kendl, ocs.ciemat.es</li>
-<li>Investigation of Fluctuations in the SOL of ASDEX Upgrade by Langmuir Probes, P. Balan, F. Mehlmann, S. Konzett, A. Kendl, C. Ionita, 2007, inis.iaea.org</li>
-<li>Experimental and numerical characterisation of fluctuations in the SOL of ASDEX upgrade during L-mode and ELMy H-mode, R. Schrittwieser, S. Konzett, F. Mehlmann, P. Balan, C. Ionita, A. Kendl, Naulin, V.; Juul Rasmussen, Jens; Nielsen, A.H.; Garcia, Odd Erik; Müller, H.W.; Herrmann, A.; V. Rohde, M. Maraschek, 34th European Physical Society Conference on Plasma Physics and Controlled Fusion, Warsaw, Poland, 2007</li>
-</ul>
+    <h2>The NYC data project</h2>
+
+<hr>
+
+<p>&nbsp;</p>
+
+<p>The city of New York publishes <a href="https://data.cityofnewyork.us/">data</a> harvested by numerous surveys conducted by its various departments. The data, released through
+the New York City Department of
+Information Technology and Telecommunications,
+ spans a wide range:
+from health based data, as hygiene control data, to data covering
+the complaints filed by residents on problems with the local water system.</p>
+
+<p>In the huge pile of data given by the NYC repository many interesting hypothesis can be tested, giving details on everyday live and behaviour of the people in New York City. Common patterns may emerge when looking at the collection of data and making cross connections if necessary. The wide temporal span in which the data has been collected and the accompanying spatial information gives the appealing possibility of revealing hidden spatio-temporal patterns.  </p>
+
+<h3>Data access</h3>
+
+<p>The data on the website is stored in various forms: charts,
+images and tables. To process the data numerically it is convenient to use the data stored in tables. One way to extract this tabulated data is given by the website in the .json Java data format. This format gives the data as (key - value) pairs, and its format conforms to the Java script format.</p>
+
+<h3>Programmatical details</h3>
+
+<p>To process the data I have used the Java language, which comes natural given the .json output format of the NYC database.
+In conjunction with the <a href="https://maven.apache.org/">Maven framework</a> and the intelligent <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA IDE</a> Java becomes
+a very convenient language for doing data analysis. A very convenient data analysis tool is the <a href="https://www.r-project.org/">R framework</a>.
+I have written some <a href="https://github.com/sjjko/nycData/tree/master/R">R scripts</a> to analyze the harvested data.</p>
+
+<h3>The data</h3>
+
+<p>You can find a basic data analysis of   <a class="page-link" href="/nycTaxi/">  Taxi data here </a>
+, and a glimpse on Car Crash data in New York City <a class="page-link" href="/nycCrash/">  here </a>.</p>
+
+<hr>
 
   </div>
 

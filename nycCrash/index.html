@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- <title>publications</title> -->
+  <!-- <title>nyc Crash</title> -->
   <meta name="description" content="">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/pub/">
+  <link rel="canonical" href="http://yourdomain.com/nycCrash/">
   <link rel="alternate" type="application/rss+xml" title="Stefan Konzett-Stoffl" href="http://yourdomain.com/feed.xml">
 </head>
 
@@ -213,18 +213,50 @@
   </script>
 
   <header class="post-header">
-    <!-- <h3 class="post-title">publications</h3> -->
+    <!-- <h3 class="post-title">nyc Crash</h3> -->
   </header>
 
   <div class="post-content">
-    <ul>
-<li>Correlation length scaling laws in drift-Alfvén edge turbulence computations, S. Konzett, D. Reiser, A. Kendl, Plasma physics and controlled Fusion, 2012</li>
-<li>Turbulence in the edge of magnetized plasmas: emergent structures and transport, A. Kendl, F. Gennrich, J. Peer, S. Konzett, T. Ribeiro, 2009, inis.iaea.org</li>
-<li>Simulations on the influence of rational magnetic surfaces on turbulence in the edge region of a tokamak fusion experiment, S. Konzett, A Kendl, D. Reiser, 2009, inis.iaea.org</li>
-<li>Magnetic geometry and flow shear effects on tokamak edge turbulence simulations, S. Konzett, D. Reiser, A. Kendl, ocs.ciemat.es</li>
-<li>Investigation of Fluctuations in the SOL of ASDEX Upgrade by Langmuir Probes, P. Balan, F. Mehlmann, S. Konzett, A. Kendl, C. Ionita, 2007, inis.iaea.org</li>
-<li>Experimental and numerical characterisation of fluctuations in the SOL of ASDEX upgrade during L-mode and ELMy H-mode, R. Schrittwieser, S. Konzett, F. Mehlmann, P. Balan, C. Ionita, A. Kendl, Naulin, V.; Juul Rasmussen, Jens; Nielsen, A.H.; Garcia, Odd Erik; Müller, H.W.; Herrmann, A.; V. Rohde, M. Maraschek, 34th European Physical Society Conference on Plasma Physics and Controlled Fusion, Warsaw, Poland, 2007</li>
-</ul>
+    <h2>Analysis of New York car accident data</h2>
+
+<hr>
+
+<p>&nbsp;</p>
+
+<p>I examined the New York City Car crash dataset, which can be found
+at the NYC <a href="https://nycopendata.socrata.com/">opendata homepage</a>. The database table stores
+attributes such as date and time of crash, longitude and latitude of the crash site, as well as
+how many persons have been injured or even killed.</p>
+
+<p>My approach was twofold. First I imported the database-data using a <a href="https://github.com/sjjko/nycData">Java script</a>,
+and the <a href="https://github.com/socrata/soda-java">Socrata Java API</a>.</p>
+
+<p>The final data analysis has been done using R scripts which you can find <a href="https://github.com/sjjko/nycData/tree/master/R">here</a>.</p>
+
+<p>For the present study I imported 25000 datasets containing 2013 and 2014 data of roadside accidents
+in New York City. The dataset is only a selection, where I chose to use chunks of M=10 subsets
+from every N=10 th dataset, which is kind of an arbitrary choice.</p>
+
+<!-- 1. Java: read data via Socrata API from database
+2. Java: write to csv for data exchange
+3. R: read data from csv
+4. R: discard incomplete datasets
+5. R: extract time and date from input data
+6. R: define city regions by longitude and latitude coordinates
+7. R: assign region to every crash site
+8. R: filter and compute regional statistics
+9. -->
+
+<p>Each dataset was assigned to a region using specified regional coordinates and
+evaluating the minimal L1 norm distance. Summing up the number of persons injured in an accident
+and dividing by the number of accidents in the region gives a measure for the probability
+of being injured when involved in an accident for every region:
+<img src="/images/dataMining/PinjuredWhenAccident.png" alt="">
+A chance of 12.5 % of being injured on the Upper East Side, contrasts to the much more
+dangerous accident statistics in the Bronx, where the injury probability peaks
+aroud 35 %.</p>
+
+<p>As this is an ongoing effort there is much more to be following here in the next few days.</p>
 
   </div>
 

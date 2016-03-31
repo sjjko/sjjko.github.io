@@ -146,6 +146,10 @@ pre {
 /**
  * Site header
  */
+.center-image {
+  margin: 0 auto;
+  display: block; }
+
 .mywrap {
   height: auto;
   width: 800px;
@@ -221,6 +225,12 @@ pre {
   background-image: url("../images/latex/Background.png");
   margin: 0px; }
 
+.myIndexBackgroundImageAreaNYC {
+  background-color: transparent;
+  background-image: url("../images/latex/BackgroundImgNYC.png");
+  margin: 0px;
+  background-repeat: repeat; }
+
 .myIndexBackgroundImageAreaDataMining {
   background-color: transparent;
   background-image: url("../images/latex/BackgroundDataMining.png");
@@ -251,17 +261,38 @@ pre {
 .aHeaderPicture {
   background-color: transparent;
   background-image: url("../images/baerge_brsCropped.png");
-  background-size: 250%;
+  background-size: 300%;
   background-repeat: no-repeat;
   background-position: center;
-  background-clip: border-box; }
+  background-clip: border-box;
+  color: black;
+  height: 300px; }
 
 .aHeaderPictureLink {
   display: block;
-  text-decoration: none;
   color: white;
-  text-indent: 1000%;
-  white-space: nowrap; }
+  text-color: black;
+  text-indent: 0%;
+  text-decoration: none;
+  top: 30px;
+  padding-top: 30px;
+  margin: 0;
+  font: 35px Arial, sans-serif; }
+
+.aHeaderPictureLink > a {
+  text-decoration: none;
+  color: white; }
+
+.aHeaderPictureLink > a:hover {
+  text-decoration: none;
+  display: block;
+  margin: 0px;
+  color: white; }
+
+.aHeaderPictureLink > a:active {
+  text-decoration: none;
+  color: black;
+  display: block; }
 
 .myown-div {
   position: relative;
@@ -277,7 +308,7 @@ pre {
   right: 0px;
   width: 1000px;
   height: 150px;
-  top: 20px;
+  top: 50px;
   background-position: center;
   left: 50px;
   color: white;
@@ -297,7 +328,7 @@ pre {
   color: black; }
 
 .my_header_toplevel_menu a {
-  font: bold 20px Arial, Helvetica, sans-serif;
+  font: bold 30px Arial, Helvetica, sans-serif;
   color: white;
   text-decoration: none;
   /* Make the link cover the entire list item-container */
@@ -309,17 +340,17 @@ pre {
 
 .my_header_toplevel_menu li:hover > ul {
   display: inline;
-  color: black; }
+  color: white; }
 
 .my_header_toplevel_menu a:hover {
   display: block;
   margin: 0px;
-  color: black; }
+  color: white; }
 
 .my_header_second-level-menu a:hover {
   display: block;
   margin: 0px;
-  color: grey; }
+  color: white; }
 
 .my_header_second-level-menu a {
   color: black;
@@ -340,34 +371,56 @@ pre {
   list-style: none;
   padding-top: 0px;
   padding-left: 25px;
-  color: black;
+  color: white;
   margin: 0;
   z-index: 3;
   display: none; }
 
 .my_header_second-level-menu > li:hover {
-  color: black;
+  color: white;
   font-weight: bold;
   background: transparent; }
 
 .my_header_third-level-menu {
   position: absolute;
   top: 0px;
-  left: 123px;
-  width: 200px;
+  left: 133px;
+  width: 250px;
   list-style: none;
-  padding-top: 0px;
+  padding-top: 10px;
   padding-left: 0px;
   margin: 0;
   display: none;
-  color: black;
+  color: white;
   z-index: 2;
+  font: 10px Arial, Helvetica, sans-serif; }
+
+.my_header_third-level-menu > li:hover {
+  color: white;
+  font-weight: bold;
+  background: transparent; }
+
+.my_header_fourth-level-menu {
+  position: absolute;
+  top: 0px;
+  left: 213px;
+  width: 220px;
+  list-style: none;
+  padding-top: 10px;
+  padding-left: 0px;
+  margin: 0;
+  display: none;
+  color: white;
+  z-index: 3;
   font: 10px Arial, Helvetica, sans-serif; }
 
 .my_header_third-level-menu a {
   font: 20px Arial, Helvetica, sans-serif; }
 
 .my_header_second-level-menu a {
+  font: 20px Arial, Helvetica, sans-serif; }
+
+.my_header_fourth-level-menu a {
   font: 20px Arial, Helvetica, sans-serif; }
 
 .my_header_third-level-menu > li {

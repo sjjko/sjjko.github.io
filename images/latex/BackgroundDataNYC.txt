@@ -1,0 +1,12 @@
+[{"dropoff_datetime":"2014-03-06T07:26:42.000",
+"dropoff_latitude":"40.759076",
+"dropoff_longitude":"-73.974284999999995",
+"fare_amount":"7.5","imp_surcharge":"0",
+"mta_tax":"0.5","passenger_count":"1",
+"pickup_datetime":"2014-03-06T07:18:39.000",
+"pickup_latitude":"40.750064999999999",
+"pickup_longitude":"-73.991417999999996",
+"rate_code":"1","store_and_fwd_flag":"N",
+"tip_amount":"0","tolls_amount":"0",
+"total_amount":"8","vendor_id":"CMT",
+"trip_distance":"1.6000000000000001",}
