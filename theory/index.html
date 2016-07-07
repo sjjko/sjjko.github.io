@@ -47,6 +47,15 @@
                 <ul  class="my_header_second-level-menu">
                   <li>data mining
                     <ul class="my_header_third-level-menu">
+                      <!-- <li><a href="/miningAlgorithms">bashMiner</a></li> -->
+                      <li><a href="http://www.minebuzz.org">minebuzz</a></li>
+
+                      <!-- <li><a href="/nycData">"NYC-data" mining</a>
+                        <ul class="my_header_fourth-level-menu">
+                          <li><a href="/nycData">introduction</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="/drugMining">drug mining</a></li>
                       <li><a href="/nycData">"NYC-data" mining</a>
                         <ul class="my_header_fourth-level-menu">
                           <li><a href="/nycData">introduction</a></li>
@@ -54,7 +63,7 @@
                           <li><a href="/nycCrash">analysis of car accident data</a></li>
                         </ul>
                       </li>
-                      <li><a href="/data mining">"NHL-data" mining</a></li>
+                      <li><a href="/data mining">"NHL-data" mining</a></li> -->
                     </ul>
                   </li>
                   <li>physics
@@ -89,6 +98,10 @@
                
              
                
+               <a class="page-link" href="/drugMining/">Drug Mining</a>
+               
+             
+               
                <a class="page-link" href="/data mining/">data mining</a>
                
              
@@ -102,6 +115,10 @@
              
                
              
+               
+             
+               
+               <a class="page-link" href="/miningAlgorithms/">mining algorithms</a>
                
              
                
@@ -129,6 +146,10 @@
                
              
                
+               <a class="page-link" href="/streamingAnalysis/">streamingAnalysis</a>
+               
+             
+               
                <a class="page-link" href="/theory/">theory</a>
                
              
@@ -145,6 +166,10 @@
                    
                  
                    
+                   <a class="page-link" href="/drugMining/">Drug Mining</a>
+                   
+                 
+                   
                    <a class="page-link" href="/data mining/">data mining</a>
                    
                  
@@ -158,6 +183,10 @@
                  
                    
                  
+                   
+                 
+                   
+                   <a class="page-link" href="/miningAlgorithms/">mining algorithms</a>
                    
                  
                    
@@ -182,6 +211,10 @@
                  
                    
                    <a class="page-link" href="/results/">results</a>
+                   
+                 
+                   
+                   <a class="page-link" href="/streamingAnalysis/">streamingAnalysis</a>
                    
                  
                    
@@ -217,17 +250,17 @@
   </header>
 
   <div class="post-content">
-    <h2>ksdft++ - theoretical background</h2>
+    <h2 id="ksdft---theoretical-background">ksdft++ - theoretical background</h2>
 
 <p>The core equation in classical quantum mechanics is the Schroedinger equation, which reads in its stationary form:as follows:
-$$ -{\hbar^2 \over 2 m} \nabla^2 \psi + V \psi = E_{s} \psi $$</p>
+<script type="math/tex">-{\hbar^2 \over 2 m} \nabla^2 \psi + V \psi = E_{s} \psi</script></p>
 
 <p>where \( \psi \) is the wavefunction, whose square maps
 each space point \(x\) to the local density of atomic
 particles. Assuming we have N atoms, each described by \( \psi_{k}(x) \),
 the local density is computed as:</p>
 
-<p>$$ n(x) = \Sigma_k \psi_{k}(x)^{\dagger} \psi_{k}(x) $$</p>
+<script type="math/tex; mode=display">n(x) = \Sigma_k \psi\_{k}(x)^{\dagger} \psi\_{k}(x)</script>
 
 <p>The distinctive feature of density functional theory (DFT) is
 the collective treatment of electrons through their density
@@ -243,26 +276,26 @@ energy terms may be reformulated in terms of the ground state density.</p>
 <p>In order for the system to be in the ground state the energy of the system has to be minimized with respect to the physical electron state. The system energy can be expressed using the Kohn–Sham potential expressions, which
 give the potential functions as functionals of the electron density \( n \) :</p>
 
-<p>$$ E = E_{ii} + E_{kin} + n U_{ei} + n U_{ee} + E_{xc}(n)   $$</p>
+<script type="math/tex; mode=display">E = E\_{ii} + E\_{kin} + n U\_{ei} + n U\_{ee} + E\_{xc}(n)</script>
 
 <p>\( E_{ii} \) is the energy of the ions in the ion potential, \( U_{ee} ={1 \over 2}\phi\) is the ion electrostatic potential as seen by the electrons, \( U_{ii} \) the ion potential and \( E_{xc} \) comes from quantum mechanically treating the electron-electron interactions. It describes the exchange of momentum of two
 interacting electrons with equal spin.
 \( E_{kin} \) is the kinetic energy of the electrons, the only quantity expressed using the wavefunction \( \psi \):</p>
 
-<p>$$ E_{kin} = {1 \over 2} \Sigma_{k} \psi(x)^{\dagger} \nabla^2 \psi(x) $$</p>
+<script type="math/tex; mode=display">E_{kin} = {1 \over 2} \Sigma\_{k} \psi(x)^{\dagger} \nabla^2 \psi(x)</script>
 
 <p>T.Arias has introduced a framework of operators, which separates the computation of these operators needed to compute the energy functional above in a chosen basis from the physical part of building the functional itself using these operators. [(see his very instructive lecture videos)][arias-youtube]</p>
 
 <p>He chose to use plane waves as basis vectors, which have no cut-off but give simple terms for the operators in use. The normalization condition we impose, which basically gives the conservation of particles and is expressed as an integral is given by the following formula:</p>
 
-<p>$$\int dV \psi_{k}(x)^{\dagger} \psi_{k&#39;}(x) = \delta_{kk&#39;}$$</p>
+<script type="math/tex; mode=display">\int dV \psi\_{k}(x)^{\dagger} \psi\_{k'}(x) = \delta\_{kk'}</script>
 
 <p>To solve for the electrostatic potential \( \phi \), which is used to calculate the electrostatic interaction of the electrons, the poisson
 equation has to be solved:</p>
 
-<p>$$ \nabla^{2} \phi(x) = -4 \pi n  $$</p>
+<script type="math/tex; mode=display">\nabla^{2} \phi(x) = -4 \pi n</script>
 
-<h3>Solving the energy functional</h3>
+<h3 id="solving-the-energy-functional">Solving the energy functional</h3>
 
 <p>Solving the energy functional given above by holding to the condition of
 constant density is a nonlinear problem. Therefore an optimization scheme has to be applied,
@@ -271,21 +304,21 @@ the simplest of which is a steepest gradient algorithm.</p>
 <p>The solver steps are as follows:</p>
 
 <ul>
-<li>initialize a set of wavefunctions \( \psi \) randomly</li>
-<li>compute the density \(  \Sigma_k \psi_{k}(x)^{\dagger} \psi_{k}(x) \)</li>
-<li>solve the PE $$ \hat{\phi}(k) = {1 \over k^2} \hat{n}(k) $$s</li>
-<li>compute the electron density \(n\) to compute all terms in the functional \( E_{total} = E_{kin} + E_{ee} + E_{ion} + E_{xc} \)</li>
-<li>repeat the following steps until resulting energy has converged:
-
-<ul>
-<li>compute the gradient of the energy functional along the wavefunction $${\partial E \over \partial \psi}$$</li>
-<li>update the wavefunction by stepping along this gradient using step length alpha: $ $$ \psi_{new} = \psi_{old} + \alpha $${\partial E \over \partial \psi_{old}}$$</li>
-<li>re-compute the energy and check if converged</li>
-</ul></li>
-<li>output the resulting wavefunctions \( \psi \) and energies</li>
+  <li>initialize a set of wavefunctions \( \psi \) randomly</li>
+  <li>compute the density \(  \Sigma_k \psi_{k}(x)^{\dagger} \psi_{k}(x) \)</li>
+  <li>solve the PE <script type="math/tex">\hat{\phi}(k) = {1 \over k^2} \hat{n}(k)</script>s</li>
+  <li>compute the electron density \(n\) to compute all terms in the functional \( E_{total} = E_{kin} + E_{ee} + E_{ion} + E_{xc} \)</li>
+  <li>repeat the following steps until resulting energy has converged:
+    <ul>
+      <li>compute the gradient of the energy functional along the wavefunction <script type="math/tex">{\partial E \over \partial \psi}</script></li>
+      <li>update the wavefunction by stepping along this gradient using step length alpha: $ <script type="math/tex">\psi\_{new} = \psi\_{old} + \alpha</script>{\partial E \over \partial \psi_{old}}$$</li>
+      <li>re-compute the energy and check if converged</li>
+    </ul>
+  </li>
+  <li>output the resulting wavefunctions \( \psi \) and energies</li>
 </ul>
 
-<h3>Running the code and deriving results</h3>
+<h3 id="running-the-code-and-deriving-results">Running the code and deriving results</h3>
 
 <p>For getting a first hands experience with the code go follow
 <a class="page-link" href="/results/">this link to the results page.</a></p>

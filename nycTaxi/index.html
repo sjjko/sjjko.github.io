@@ -47,6 +47,15 @@
                 <ul  class="my_header_second-level-menu">
                   <li>data mining
                     <ul class="my_header_third-level-menu">
+                      <!-- <li><a href="/miningAlgorithms">bashMiner</a></li> -->
+                      <li><a href="http://www.minebuzz.org">minebuzz</a></li>
+
+                      <!-- <li><a href="/nycData">"NYC-data" mining</a>
+                        <ul class="my_header_fourth-level-menu">
+                          <li><a href="/nycData">introduction</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="/drugMining">drug mining</a></li>
                       <li><a href="/nycData">"NYC-data" mining</a>
                         <ul class="my_header_fourth-level-menu">
                           <li><a href="/nycData">introduction</a></li>
@@ -54,7 +63,7 @@
                           <li><a href="/nycCrash">analysis of car accident data</a></li>
                         </ul>
                       </li>
-                      <li><a href="/data mining">"NHL-data" mining</a></li>
+                      <li><a href="/data mining">"NHL-data" mining</a></li> -->
                     </ul>
                   </li>
                   <li>physics
@@ -89,6 +98,10 @@
                
              
                
+               <a class="page-link" href="/drugMining/">Drug Mining</a>
+               
+             
+               
                <a class="page-link" href="/data mining/">data mining</a>
                
              
@@ -102,6 +115,10 @@
              
                
              
+               
+             
+               
+               <a class="page-link" href="/miningAlgorithms/">mining algorithms</a>
                
              
                
@@ -129,6 +146,10 @@
                
              
                
+               <a class="page-link" href="/streamingAnalysis/">streamingAnalysis</a>
+               
+             
+               
                <a class="page-link" href="/theory/">theory</a>
                
              
@@ -145,6 +166,10 @@
                    
                  
                    
+                   <a class="page-link" href="/drugMining/">Drug Mining</a>
+                   
+                 
+                   
                    <a class="page-link" href="/data mining/">data mining</a>
                    
                  
@@ -158,6 +183,10 @@
                  
                    
                  
+                   
+                 
+                   
+                   <a class="page-link" href="/miningAlgorithms/">mining algorithms</a>
                    
                  
                    
@@ -182,6 +211,10 @@
                  
                    
                    <a class="page-link" href="/results/">results</a>
+                   
+                 
+                   
+                   <a class="page-link" href="/streamingAnalysis/">streamingAnalysis</a>
                    
                  
                    
@@ -217,35 +250,70 @@
   </header>
 
   <div class="post-content">
-    <h2>Analysis of New York City Cab data</h2>
+    <h2 id="analysis-of-new-york-city-cab-data">Analysis of New York City Cab data</h2>
 
-<hr>
-
-<p>&nbsp;</p>
+<hr />
+<ul id="markdown-toc">
+  <li><a href="#analysis-of-new-york-city-cab-data" id="markdown-toc-analysis-of-new-york-city-cab-data">Analysis of New York City Cab data</a>    <ul>
+      <li><a href="#the-data" id="markdown-toc-the-data">The data</a></li>
+      <li><a href="#one-glimpse-at-the-analysis" id="markdown-toc-one-glimpse-at-the-analysis">One glimpse at the analysis</a></li>
+      <li><a href="#using-the-orange-framework---investigate-into-the-tipping-behaviour" id="markdown-toc-using-the-orange-framework---investigate-into-the-tipping-behaviour">Using the orange framework - investigate into the tipping behaviour</a></li>
+    </ul>
+  </li>
+</ul>
+<hr />
+<p> </p>
 
 <p>In this excursion I examined the New York City Cab dataset, which can be found
 at the NYC <a href="https://nycopendata.socrata.com/">opendata homepage</a>. The database table stores
 attributes such as drop off and pickup times, fare amounts, tips given,
-the type of payment used,....</p>
+the type of payment used,….</p>
 
 <p>My approach was twofold. First I imported the database-data using a <a href="https://github.com/sjjko/nycData">Java script</a>,
 and the <a href="https://github.com/socrata/soda-java">Socrata Java API</a>.</p>
 
-<p>The final data analysis has been done using R scripts you can find <a href="https://github.com/sjjko/nycData/tree/master/R">here</a>.</p>
+<p>The final data analysis has been done using R scripts you can find <a href="https://github.com/sjjko/nycData/tree/master/R">here</a>
+and the great <a href="http://orange.biolab.si/">orange data analysis software</a>.</p>
 
-<h3>One glimpse at the analysis</h3>
+<h3 id="the-data">The data</h3>
+
+<p>In the Java script here I read the data from the SQL database and
+display the</p>
+
+<p><a href="/images/dataMining/mapsNycData/allCabPickup.png"><img src="/images/dataMining/mapsNycData/allCabPickup.png" /></a></p>
+
+<h3 id="one-glimpse-at-the-analysis">One glimpse at the analysis</h3>
 
 <p>I used the GPS data of the taxi pickup location and used the absolute value as norm
 to assign the taxi rides to the nearest town area. In a next step I filtered the data
 for the region and computed the mean value of trip distance by trip time to arrive at a
 simple chart giving the average speed of a cab in the region of interest:</p>
 
-<p><img src="/images/dataMining/AverageSpeedTaxi.png" align="center"/></p>
+<p><img src="/images/dataMining/AverageSpeedTaxi.png" align="center" /></p>
 
 <p>Unsurprisingly the cabs are fastest in the Bronx and Washington Heights, far from
 the busy city center and slowest in Chelsea, where roads are narrow and traffic is high.</p>
 
+<h3 id="using-the-orange-framework---investigate-into-the-tipping-behaviour">Using the orange framework - investigate into the tipping behaviour</h3>
+
+<p>First some preprocessing of the Cab data has to be done. The following picture shows the
+data-pipeline.</p>
+
+<p><a href="/images/dataMining/orange/preprocessing_Taxi_pipeline.png">
+&lt;img src=”/images/dataMining/orange/preprocessing_Taxi_pipeline.png”
+ width=700 align=”center”/&gt;
+</a></p>
+
+<p><a href="/images/dataMining/orange/Borough_to_Borough_Distribution.png">
+&lt;img src=”/images/dataMining/orange/Borough_to_Borough_Distribution.png” width=700  align=”center”/&gt;
+</a></p>
+
+<p><a href="/images/dataMining/orange/VennLatenightNoTipOnePassenger.png">
+&lt;img src=”/images/dataMining/orange/VennLatenightNoTipOnePassenger.png” width=700  align=”center”/&gt;
+</a></p>
+
 <p>As this is an ongoing effort there is much more to be following here in the next few days.</p>
+
 
   </div>
 

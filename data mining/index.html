@@ -47,6 +47,15 @@
                 <ul  class="my_header_second-level-menu">
                   <li>data mining
                     <ul class="my_header_third-level-menu">
+                      <!-- <li><a href="/miningAlgorithms">bashMiner</a></li> -->
+                      <li><a href="http://www.minebuzz.org">minebuzz</a></li>
+
+                      <!-- <li><a href="/nycData">"NYC-data" mining</a>
+                        <ul class="my_header_fourth-level-menu">
+                          <li><a href="/nycData">introduction</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="/drugMining">drug mining</a></li>
                       <li><a href="/nycData">"NYC-data" mining</a>
                         <ul class="my_header_fourth-level-menu">
                           <li><a href="/nycData">introduction</a></li>
@@ -54,7 +63,7 @@
                           <li><a href="/nycCrash">analysis of car accident data</a></li>
                         </ul>
                       </li>
-                      <li><a href="/data mining">"NHL-data" mining</a></li>
+                      <li><a href="/data mining">"NHL-data" mining</a></li> -->
                     </ul>
                   </li>
                   <li>physics
@@ -89,6 +98,10 @@
                
              
                
+               <a class="page-link" href="/drugMining/">Drug Mining</a>
+               
+             
+               
                <a class="page-link" href="/data mining/">data mining</a>
                
              
@@ -102,6 +115,10 @@
              
                
              
+               
+             
+               
+               <a class="page-link" href="/miningAlgorithms/">mining algorithms</a>
                
              
                
@@ -129,6 +146,10 @@
                
              
                
+               <a class="page-link" href="/streamingAnalysis/">streamingAnalysis</a>
+               
+             
+               
                <a class="page-link" href="/theory/">theory</a>
                
              
@@ -145,6 +166,10 @@
                    
                  
                    
+                   <a class="page-link" href="/drugMining/">Drug Mining</a>
+                   
+                 
+                   
                    <a class="page-link" href="/data mining/">data mining</a>
                    
                  
@@ -158,6 +183,10 @@
                  
                    
                  
+                   
+                 
+                   
+                   <a class="page-link" href="/miningAlgorithms/">mining algorithms</a>
                    
                  
                    
@@ -182,6 +211,10 @@
                  
                    
                    <a class="page-link" href="/results/">results</a>
+                   
+                 
+                   
+                   <a class="page-link" href="/streamingAnalysis/">streamingAnalysis</a>
                    
                  
                    
@@ -217,8 +250,8 @@
   </header>
 
   <div class="post-content">
-    <p>Data mining NHL&copy; game data is the topic of this excursion.
-I wrote a <a href="/pages/pyStatDoku/html/pyStatKs.html">python module to fetch NHL&copy;</a> game data, format it and
+    <p>Data mining NHL© game data is the topic of this excursion.
+I wrote a <a href="/pages/pyStatDoku/html/pyStatKs.html">python module to fetch NHL©</a> game data, format it and
 do some data analysis. In a next step I used the
 <a href="http://jupyter.org/">Jupyter</a> project to generate interactive datasheets using <a href="https://www.r-project.org/">R</a> and
 <a href="https://www.python.org/download/releases/2.7/">python</a>.</p>
@@ -226,59 +259,62 @@ do some data analysis. In a next step I used the
 <p>In a next step, using Java and SQL within the Maven framework I explored a more general
 and <a href="https://github.com/sjjko/nhlAnalysis/tree/master/javaNHL">scalable route to data analysis</a>.</p>
 
-<p><img src="/images/Python-logo.png" style="width: 120px" align="right"  height="120"/>
-<img src="/images/pyBrain.jpeg" style="width: 180px" align="right"  height="120"/></p>
+<p><img src="/images/Python-logo.png" style="width: 120px" align="right" height="120" />
+<img src="/images/pyBrain.jpeg" style="width: 180px" align="right" height="120" /></p>
 
 <p>I have split the analysis in various parts.</p>
 
-<p><img src="/images/neuralNetwork.png"  align="right" height="233" width="233"  class="rotateMe"/></p>
+<p><img src="/images/neuralNetwork.png" align="right" height="233" width="233" class="rotateMe" /></p>
 
-<hr>
-
-<ul>
-<li><a href="https://github.com/sjjko/nhlAnalysis/tree/master/ipython/neuralNHL.ipynb">machine learning part</a> in Python:
+<hr />
 
 <ul>
-<li>training a neural network to predict games outcomes</li>
-<li>taking subset of overall game data as matchups between the New York Islanders and Rangers</li>
-<li>using <a href="http://pybrain.org/">pyBrain</a> library</li>
-</ul></li>
+  <li><a href="https://github.com/sjjko/nhlAnalysis/tree/master/ipython/neuralNHL.ipynb">machine learning part</a> in Python:
+    <ul>
+      <li>training a neural network to predict games outcomes
+        <ul>
+          <li>taking subset of overall game data as matchups between the New York Islanders and Rangers</li>
+        </ul>
+      </li>
+      <li>using <a href="http://pybrain.org/">pyBrain</a> library</li>
+    </ul>
+
+    <p><img src="/images/Java_logo.png" align="right" style="width: 120px" height="120" />
+<img src="/images/MySQL.svg.png" align="right" style="width: 120px" height="120" /></p>
+  </li>
 </ul>
 
-<p><img src="/images/Java_logo.png" align="right" style="width: 120px" height="120"/>
-  <img src="/images/MySQL.svg.png"  align="right" style="width: 120px" height="120"/></p>
-
-<hr>
+<hr />
 
 <ul>
-<li><a href="https://github.com/sjjko/nhlAnalysis/tree/master/javaNHL">classification of data</a> using a linear regression analysis  and cluster analysis <a href="http://www.cs.waikato.ac.nz/ml/weka/">weka package</a> in Java and SQL
-
-<ul>
-<li>using mySQL database to store and retrieve game data</li>
-<li>using <a href="http://www.cs.waikato.ac.nz/ml/weka/">weka</a> analysis package to process data</li>
-<li>using <a href="https://maven.apache.org/">Maven framework</a> as Java programming environment
-<img src="/images/maven-logo-black-on-white.png"  align="right" style="width: 240px" height="120"/></li>
-</ul></li>
+  <li><a href="https://github.com/sjjko/nhlAnalysis/tree/master/javaNHL">classification of data</a> using a linear regression analysis  and cluster analysis <a href="http://www.cs.waikato.ac.nz/ml/weka/">weka package</a> in Java and SQL
+    <ul>
+      <li>using mySQL database to store and retrieve game data</li>
+      <li>using <a href="http://www.cs.waikato.ac.nz/ml/weka/">weka</a> analysis package to process data</li>
+      <li>using <a href="https://maven.apache.org/">Maven framework</a> as Java programming environment
+<img src="/images/maven-logo-black-on-white.png" align="right" style="width: 240px" height="120" /></li>
+    </ul>
+  </li>
 </ul>
 
-<hr>
-
+<hr />
 <ul>
-<li>analysis of NHL&copy; gamedata using the R package <a href="https://cran.r-project.org/web/packages/fpc/fpc.pdf">fpc</a>
+  <li>analysis of NHL© gamedata using the R package <a href="https://cran.r-project.org/web/packages/fpc/fpc.pdf">fpc</a>
 and wrapped in a <a href="https://github.com/sjjko/nhlAnalysis/blob/master/R/classificationNHLData.ipynb">Jupyter notebook</a>.
-    <img src="/images/Rlogo.png" align="right"  style="width: 120px" height="120"/>
-
-<ul>
-<li><a href="http://jupyter.org/">Jupyter notebooks</a> for data analysis and presentation
-
-<ul>
-<li>analysis of game data <a href="https://github.com/sjjko/nhlAnalysis/blob/master/R/probabilitiesAndEntropyNHL.ipynb">probabilities and entropy</a></li>
-<li>analysis of game data using <a href="https://github.com/sjjko/nhlAnalysis/blob/master/R/waveletNHL.ipynb">wavelets</a></li>
-<li>analysis of game data using <a href="https://github.com/sjjko/nhlAnalysis/blob/master/R/classificationNHLData.ipynb">clustering methods</a></li>
-<li>analysis of simple <a href="https://github.com/sjjko/nhlAnalysis/blob/master/R/winOrLooseNHL.ipynb">loosing statistics</a></li>
-</ul></li>
-</ul></li>
+      <img src="/images/Rlogo.png" align="right" style="width: 120px" height="120" />
+    <ul>
+      <li><a href="http://jupyter.org/">Jupyter notebooks</a> for data analysis and presentation
+        <ul>
+          <li>analysis of game data <a href="https://github.com/sjjko/nhlAnalysis/blob/master/R/probabilitiesAndEntropyNHL.ipynb">probabilities and entropy</a></li>
+          <li>analysis of game data using <a href="https://github.com/sjjko/nhlAnalysis/blob/master/R/waveletNHL.ipynb">wavelets</a></li>
+          <li>analysis of game data using <a href="https://github.com/sjjko/nhlAnalysis/blob/master/R/classificationNHLData.ipynb">clustering methods</a></li>
+          <li>analysis of simple <a href="https://github.com/sjjko/nhlAnalysis/blob/master/R/winOrLooseNHL.ipynb">loosing statistics</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
+
 
   </div>
 

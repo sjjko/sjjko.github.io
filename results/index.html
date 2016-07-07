@@ -47,6 +47,15 @@
                 <ul  class="my_header_second-level-menu">
                   <li>data mining
                     <ul class="my_header_third-level-menu">
+                      <!-- <li><a href="/miningAlgorithms">bashMiner</a></li> -->
+                      <li><a href="http://www.minebuzz.org">minebuzz</a></li>
+
+                      <!-- <li><a href="/nycData">"NYC-data" mining</a>
+                        <ul class="my_header_fourth-level-menu">
+                          <li><a href="/nycData">introduction</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="/drugMining">drug mining</a></li>
                       <li><a href="/nycData">"NYC-data" mining</a>
                         <ul class="my_header_fourth-level-menu">
                           <li><a href="/nycData">introduction</a></li>
@@ -54,7 +63,7 @@
                           <li><a href="/nycCrash">analysis of car accident data</a></li>
                         </ul>
                       </li>
-                      <li><a href="/data mining">"NHL-data" mining</a></li>
+                      <li><a href="/data mining">"NHL-data" mining</a></li> -->
                     </ul>
                   </li>
                   <li>physics
@@ -89,6 +98,10 @@
                
              
                
+               <a class="page-link" href="/drugMining/">Drug Mining</a>
+               
+             
+               
                <a class="page-link" href="/data mining/">data mining</a>
                
              
@@ -102,6 +115,10 @@
              
                
              
+               
+             
+               
+               <a class="page-link" href="/miningAlgorithms/">mining algorithms</a>
                
              
                
@@ -129,6 +146,10 @@
                
              
                
+               <a class="page-link" href="/streamingAnalysis/">streamingAnalysis</a>
+               
+             
+               
                <a class="page-link" href="/theory/">theory</a>
                
              
@@ -145,6 +166,10 @@
                    
                  
                    
+                   <a class="page-link" href="/drugMining/">Drug Mining</a>
+                   
+                 
+                   
                    <a class="page-link" href="/data mining/">data mining</a>
                    
                  
@@ -158,6 +183,10 @@
                  
                    
                  
+                   
+                 
+                   
+                   <a class="page-link" href="/miningAlgorithms/">mining algorithms</a>
                    
                  
                    
@@ -182,6 +211,10 @@
                  
                    
                    <a class="page-link" href="/results/">results</a>
+                   
+                 
+                   
+                   <a class="page-link" href="/streamingAnalysis/">streamingAnalysis</a>
                    
                  
                    
@@ -217,32 +250,32 @@
   </header>
 
   <div class="post-content">
-    <h1>Computation of a Germanium molecule using ksdft++</h1>
+    <h1 id="computation-of-a-germanium-molecule-using-ksdft">Computation of a Germanium molecule using ksdft++</h1>
 
-<h2>(from setup to results)</h2>
+<h2 id="from-setup-to-results">(from setup to results)</h2>
 
-<hr>
+<hr />
 
-<h2>The model</h2>
+<h2 id="the-model">The model</h2>
 
 <p>As a walkthrough example we calculate the electronic configuration of
 8 Germanium atoms, with 32 valence electrons, consisting of 16 electrons in 2 spin configurations.</p>
 
-<h3>Configuration of the ionic potential</h3>
+<h3 id="configuration-of-the-ionic-potential">Configuration of the ionic potential</h3>
 
 <p>The ionic potential is hard coded in the ionic_potential class. To add a new
 atomic type one has to adapt the code and add a new potential expression. The following code shows the implementation of the model for a germanium core potential. The potential is called Starkloff Joannopoulos model</p>
 
-<p>$$ V(r) = - { Z \over r } { 1 - e^{-\lambda r} \over 1 + e^{-\lambda(r-r_{c}) } } $$</p>
+<script type="math/tex; mode=display">V(r) = - { Z \over r } { 1 - e^{-\lambda r} \over 1 + e^{-\lambda(r-r_{c}) } }</script>
 
 <p>T. Arias derived a Fourier series form which can be cut off after few terms and gives:</p>
 
-<p>$$ V(G) = - { 4 \pi Z \over G^2 } + { 4 \pi Z (1+e^{-\lambda r_{c}}) \over G^2 } V_{2}(G) $$
-$$  V_{2}(G) = \Bigg(   -{2 \pi e^{-\pi G \lambda}  cos(G r_{c}) {G \over \lambda}  \over 1 - e^{-2 \pi G / \lambda} } + \Sigma_{n=0}^{\infty} (-1)^n { e^{-\lambda r_{c} n} \over  1 + ({n \lambda \over G} )^2 } \Bigg) $$</p>
+<p><script type="math/tex">V(G) = - { 4 \pi Z \over G^2 } + { 4 \pi Z (1+e^{-\lambda r\_{c}}) \over G^2 } V\_{2}(G)</script>
+<script type="math/tex">V\_{2}(G) = \Bigg(   -{2 \pi e^{-\pi G \lambda}  cos(G r\_{c}) {G \over \lambda}  \over 1 - e^{-2 \pi G / \lambda} } + \Sigma_{n=0}^{\infty} (-1)^n { e^{-\lambda r\_{c} n} \over  1 + ({n \lambda \over G} )^2 } \Bigg)</script></p>
 
 <p>The ionic potential is implemented in the ionicPotentialClass class,
 which holds the geometrical quantities to compute an arbitrary ionic potential.
-Here the potential is defined as a quantity in wavenumber space and finally it is backtransformed to real space before it is stored in the class matrix <code>Vdual</code>.</p>
+Here the potential is defined as a quantity in wavenumber space and finally it is backtransformed to real space before it is stored in the class matrix <code class="highlighter-rouge">Vdual</code>.</p>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">else</span> <span class="nf">if</span><span class="p">(</span><span class="n">caseName</span><span class="o">==</span><span class="s">"Germanium"</span><span class="p">)</span>
     <span class="p">{</span>
@@ -291,17 +324,17 @@ Here the potential is defined as a quantity in wavenumber space and finally it i
 
     <span class="p">}</span></code></pre></figure>
 
-<p>The code checks the computed potential <code>Vdual</code> for flaws before it is turned over to the routine forming the energy functional expression.</p>
+<p>The code checks the computed potential <code class="highlighter-rouge">Vdual</code> for flaws before it is turned over to the routine forming the energy functional expression.</p>
 
-<h2>Configuration of the input files</h2>
+<h2 id="configuration-of-the-input-files">Configuration of the input files</h2>
 
 <p>For every case we compute there has to be a folder in the case directory. For the Germanium case we find a folder case/Germanium where two files reside.</p>
 
 <p>There are two files to adapt for ksdft++ to run:</p>
 
 <ul>
-<li>the atoms.param file holds the positions of the atomic cores</li>
-<li>the inputFile.param file holds physical, geometrical and other parameters</li>
+  <li>the atoms.param file holds the positions of the atomic cores</li>
+  <li>the inputFile.param file holds physical, geometrical and other parameters</li>
 </ul>
 
 <p>inputFile.param:</p>
@@ -342,41 +375,41 @@ Here the potential is defined as a quantity in wavenumber space and finally it i
 in this case. The units are bohr, which is around \( 5.3 \times 10^{-11} m  \)
 The Germanium molecule is arranged in a diamond shaped grid.</p>
 
-<h2>Run the case</h2>
+<h2 id="run-the-case">Run the case</h2>
 
 <p>To run the case, given that the setup.sh configuration script has succeeded
 in building the executable, we can simply type:</p>
 
-<p><code>./release_ksdft++</code> name<em>of</em>case</p>
+<p><code class="highlighter-rouge">./release_ksdft++</code> name_of_case</p>
 
 <p>In this case this reads:</p>
 
-<p><code>./release_ksdft++</code> Germanium</p>
+<p><code class="highlighter-rouge">./release_ksdft++</code> Germanium</p>
 
-<h2>Postprocessing</h2>
+<h2 id="postprocessing">Postprocessing</h2>
 
-<p>As soon as the code has finished computing you&#39;ll find some
+<p>As soon as the code has finished computing you’ll find some
 files with ending 2dMat, which hold the 2D matrix slices to be plotted.
 In the latex.tex file there is the latex file assembled by the code, describing
-the computations which took place. In the file &quot;finalResult_Germanium.dat&quot; the energy leves of the various electrons is summarized.</p>
+the computations which took place. In the file “finalResult_Germanium.dat” the energy leves of the various electrons is summarized.</p>
 
 <p>To get to the finished latex pdf document and plot all the figures, execute the
 plotScript.sh file in this folder. It uses gnuplot to derive all the images
 and creates a folder structure in ./POSTPROCESSING/ where all the cases
 have a distinct folder with their names. In this folder, for Germanium it is
 ./POSTPROCESSING/Germanium/ we find a DATA folder, where the 2dMat files are stored.
-In a doc folder the latex pdf file is stored, named in this case as &quot;Germanium_doku.pdf&quot;. In the IMG folder all the plots can be found.</p>
+In a doc folder the latex pdf file is stored, named in this case as “Germanium_doku.pdf”. In the IMG folder all the plots can be found.</p>
 
 <p>For Germanium we have the following ionic potential:
-<img src="/images/quantum/Germanium_Vdualdirekt_xz.png" alt=""></p>
+<img src="/images/quantum/Germanium_Vdualdirekt_xz.png" alt="" /></p>
 
 <p>The final electron density, for a slice through the unit cell in direction of x
 looks as follows:
-<img src="/images/quantum/Germanium_density_final_yz.png" alt=""></p>
+<img src="/images/quantum/Germanium_density_final_yz.png" alt="" /></p>
 
 <p>In the following images the density of one of the 16 electron states (with spin degeneracy in this case, without magnetic fields) is shown, with the dark
 places giving areas of lower probability of finding the electron.
-<img src="/images/quantum/Germanium_psi_5_xy.png" alt="">
+<img src="/images/quantum/Germanium_psi_5_xy.png" alt="" />
 The results file gives us an energy of -0.081 hartree for this electron state.</p>
 
 <!-- For the hydrogen atom the ion potential looks as follows, with units in hartrees and spatial

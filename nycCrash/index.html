@@ -47,6 +47,15 @@
                 <ul  class="my_header_second-level-menu">
                   <li>data mining
                     <ul class="my_header_third-level-menu">
+                      <!-- <li><a href="/miningAlgorithms">bashMiner</a></li> -->
+                      <li><a href="http://www.minebuzz.org">minebuzz</a></li>
+
+                      <!-- <li><a href="/nycData">"NYC-data" mining</a>
+                        <ul class="my_header_fourth-level-menu">
+                          <li><a href="/nycData">introduction</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="/drugMining">drug mining</a></li>
                       <li><a href="/nycData">"NYC-data" mining</a>
                         <ul class="my_header_fourth-level-menu">
                           <li><a href="/nycData">introduction</a></li>
@@ -54,7 +63,7 @@
                           <li><a href="/nycCrash">analysis of car accident data</a></li>
                         </ul>
                       </li>
-                      <li><a href="/data mining">"NHL-data" mining</a></li>
+                      <li><a href="/data mining">"NHL-data" mining</a></li> -->
                     </ul>
                   </li>
                   <li>physics
@@ -89,6 +98,10 @@
                
              
                
+               <a class="page-link" href="/drugMining/">Drug Mining</a>
+               
+             
+               
                <a class="page-link" href="/data mining/">data mining</a>
                
              
@@ -102,6 +115,10 @@
              
                
              
+               
+             
+               
+               <a class="page-link" href="/miningAlgorithms/">mining algorithms</a>
                
              
                
@@ -129,6 +146,10 @@
                
              
                
+               <a class="page-link" href="/streamingAnalysis/">streamingAnalysis</a>
+               
+             
+               
                <a class="page-link" href="/theory/">theory</a>
                
              
@@ -145,6 +166,10 @@
                    
                  
                    
+                   <a class="page-link" href="/drugMining/">Drug Mining</a>
+                   
+                 
+                   
                    <a class="page-link" href="/data mining/">data mining</a>
                    
                  
@@ -158,6 +183,10 @@
                  
                    
                  
+                   
+                 
+                   
+                   <a class="page-link" href="/miningAlgorithms/">mining algorithms</a>
                    
                  
                    
@@ -182,6 +211,10 @@
                  
                    
                    <a class="page-link" href="/results/">results</a>
+                   
+                 
+                   
+                   <a class="page-link" href="/streamingAnalysis/">streamingAnalysis</a>
                    
                  
                    
@@ -217,25 +250,84 @@
   </header>
 
   <div class="post-content">
-    <h2>Analysis of New York car accident data</h2>
+    <h2 id="analysis-of-new-york-car-accident-data">Analysis of New York car accident data</h2>
 
-<hr>
+<hr />
+<ul id="markdown-toc">
+  <li><a href="#analysis-of-new-york-car-accident-data" id="markdown-toc-analysis-of-new-york-car-accident-data">Analysis of New York car accident data</a>    <ul>
+      <li><a href="#questions" id="markdown-toc-questions">Questions</a></li>
+      <li><a href="#outline" id="markdown-toc-outline">Outline</a></li>
+      <li><a href="#the-data" id="markdown-toc-the-data">the Data</a></li>
+      <li><a href="#fetching-the-data-from-nyc-socrates-database" id="markdown-toc-fetching-the-data-from-nyc-socrates-database">fetching the data from nyc socrates database</a></li>
+      <li><a href="#preprocessing-with-orange" id="markdown-toc-preprocessing-with-orange">preprocessing with Orange</a></li>
+      <li><a href="#r" id="markdown-toc-r">R</a></li>
+      <li><a href="#python-pattern-mining-and-machine-learning" id="markdown-toc-python-pattern-mining-and-machine-learning">Python: Pattern Mining and Machine Learning</a></li>
+      <li><a href="#classification" id="markdown-toc-classification">Classification</a>        <ul>
+          <li><a href="#unsupervised-classification" id="markdown-toc-unsupervised-classification">Unsupervised Classification</a></li>
+          <li><a href="#cross---validation" id="markdown-toc-cross---validation">Cross - Validation</a></li>
+          <li><a href="#linear-classification" id="markdown-toc-linear-classification">Linear Classification</a></li>
+          <li><a href="#random-forest-classification" id="markdown-toc-random-forest-classification">random forest classification</a></li>
+          <li><a href="#bayesian" id="markdown-toc-bayesian">bayesian</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<hr />
+<p> </p>
 
-<p>&nbsp;</p>
+<p> </p>
 
 <p>I examined the New York City Car crash dataset, which can be found
 at the NYC <a href="https://nycopendata.socrata.com/">opendata homepage</a>. The database table stores
-attributes such as date and time of crash, longitude and latitude of the crash site, as well as
-how many persons have been injured or even killed.</p>
+attributes such as date and time of crash, longitude and latitude of the crash site, as well as the number of persons injured or even killed. In the dataset I
+fetched from the opendata page, data from the years 2013 / were included.</p>
 
-<p>My approach was twofold. First I imported the database-data using a <a href="https://github.com/sjjko/nycData">Java script</a>,
-and the <a href="https://github.com/socrata/soda-java">Socrata Java API</a>.</p>
+<h3 id="questions">Questions</h3>
 
-<p>The final data analysis has been done using R scripts which you can find <a href="https://github.com/sjjko/nycData/tree/master/R">here</a>.</p>
+<ul>
+  <li>is there a pattern of areas with higher accident probability at a certain time of day / period of year
+    <ul>
+      <li>could there be a best way of placing response team across town</li>
+    </ul>
+  </li>
+  <li>(where) do most of the accidents occur in the morning rush-hour (7 a.m. - 9 a.m.)?</li>
+  <li>is there a pattern in the cause of the accident (alcohol) for a certain area and time of day
+    <ul>
+      <li>after - work drink to show peak in late evening times</li>
+    </ul>
+  </li>
+</ul>
 
-<p>For the present study I imported 25000 datasets containing 2013 and 2014 data of roadside accidents
-in New York City. The dataset is only a selection, where I chose to use chunks of M=10 subsets
-from every N=10 th dataset, which is kind of an arbitrary choice.</p>
+<h3 id="outline">Outline</h3>
+
+<p>My approach was twofold. First I imported the database-data using a <a href="https://github.com/sjjko/nycData">Java script</a> and the <a href="https://github.com/socrata/soda-java">Socrata Java API</a>,
+then used this script to plot the crash sites to get
+an overview of the spatial distribution of car accidents in New York City.</p>
+
+<p>In a next step I used the R scripts which you can find <a href="https://github.com/sjjko/nycData/tree/master/R">here</a>
+to collect some interesting statistical features of the datasets.</p>
+
+<p>In a final step I used Python and the <a href="http://orange.biolab.si/">Orange data analysis and machine learning</a> library to do some pattern searching using probablistic and
+machine learning techniques.</p>
+
+<h3 id="the-data">the Data</h3>
+
+<div style="background-color:rgba(255,125,0, 0.3);border-radius: 25px; text-align:left; vertical-align: top;margin-top:0px;margin-bottom:30px; margin-left:0px;margin-right:10px; padding:40px; font: 22px Arial, sans-serif;">
+For the present study I imported 25000 datasets containing 2013 and 2014 data of roadside accidents in New York City. I chose
+only those datasets with a report of at least an injured person.
+</div>
+
+<!--  
+yellow 255-255-0
+cyan   0-255-255
+blue   0-0-255
+green  0-255-0
+orange 255,125,0
+rasperry 255,0,125
+
+
+   -->
 
 <!-- 1. Java: read data via Socrata API from database
 2. Java: write to csv for data exchange
@@ -247,16 +339,67 @@ from every N=10 th dataset, which is kind of an arbitrary choice.</p>
 8. R: filter and compute regional statistics
 9. -->
 
+<h3 id="fetching-the-data-from-nyc-socrates-database">fetching the data from nyc socrates database</h3>
+
+<h3 id="preprocessing-with-orange">preprocessing with Orange</h3>
+
+<p>In a first step the data is preprocessed using the Orange framework, which itself relies
+heavily on scikit and numpy. The following chart shows the data pipeline visualizing the
+main steps to extract the data.</p>
+
+<p><a href="/images/dataMining/orange/crash_preprocessing_orange.png"><img src="/images/dataMining/orange/crash_preprocessing_orange.png" /></a></p>
+
+<h3 id="r">R</h3>
+
 <p>Each dataset was assigned to a region using specified regional coordinates and
 evaluating the minimal L1 norm distance. Summing up the number of persons injured in an accident
 and dividing by the number of accidents in the region gives a measure for the probability
-of being injured when involved in an accident for every region:
-<img src="/images/dataMining/PinjuredWhenAccident.png" alt="">
+of being injured when involved in an accident for every region (click for enlarging):</p>
+
+<!-- <a href="/images/dataMining/PinjuredWhenAccident.png">
+<img src="/images/dataMining/PinjuredWhenAccident.png" width=900/>
+</a> -->
+
+<p><a href="/images/dataMining/PinjuredWhenAccident.png"><img src="/images/dataMining/PinjuredWhenAccident.png" /></a></p>
+
+<div style="background-color:rgba(0,255,0, 0.1);border-radius: 25px; text-align:left; vertical-align: top;margin-top:0px;margin-bottom:30px; margin-left:0px;margin-right:10px; padding:40px; font: 22px Arial, sans-serif;">
 A chance of 12.5 % of being injured on the Upper East Side, contrasts to the much more
 dangerous accident statistics in the Bronx, where the injury probability peaks
-aroud 35 %.</p>
+aroud 35 %.
+</div>
 
-<p>As this is an ongoing effort there is much more to be following here in the next few days.</p>
+<h3 id="python-pattern-mining-and-machine-learning">Python: Pattern Mining and Machine Learning</h3>
+
+<p>Using the data-mining and machine-learning package <a href="http://orange.biolab.si/">Orange</a>,
+as well as the wrapped library scikit<sup id="fnref:skicit_citation"><a href="#fn:skicit_citation" class="footnote">1</a></sup> <sup id="fnref:skicit_api"><a href="#fn:skicit_api" class="footnote">2</a></sup>, a data classification is done.</p>
+
+<h3 id="classification">Classification</h3>
+
+<h4 id="unsupervised-classification">Unsupervised Classification</h4>
+
+<h4 id="cross---validation">Cross - Validation</h4>
+
+<p>The classification procedure is done in multiple steps, with each step consisting of a predictive
+and one testing part, performed on different chuncks of the input data.
+The simplest possible way is to perform a 2-fold cross-validation, partitioning the initial
+data into halves and using those in two steps with exchanged roles.</p>
+
+<h4 id="linear-classification">Linear Classification</h4>
+
+<h4 id="random-forest-classification">random forest classification</h4>
+
+<h4 id="bayesian">bayesian</h4>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:skicit_citation">
+      <p>“Machine Learning in Python”,Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V.and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P.and Weiss, R. and Dubourg, V. and Vanderplas, J. and Passos, A. andCournapeau, D. and Brucher, M. and Perrot, M. and Duchesnay,E.,Journal of Machine Learning Research,12,2825–2830,2011 <a href="#fnref:skicit_citation" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:skicit_api">
+      <p>API design for machine learning software: experiences from the scikit-learn project, Buitinck et al., 2013. <a href="#fnref:skicit_api" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
   </div>
 
